@@ -65,7 +65,11 @@ sentiment_values[0]
 
 sentiment_df = pd.DataFrame(sentiment_values, columns=["polaridad", "tweet"])
 
+
+
 sentiment_df.head()
+
+print(sentiment_df)
 
 fig, ax = plt.subplots(figsize=(8, 6))
 
