@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import itertools
+# import itertoolsp
 import collections
 import tweepy as tw
 import nltk
@@ -16,10 +16,10 @@ warnings.filterwarnings("ignore")
 sns.set(font_scale=1.5)
 sns.set_style("whitegrid")
 
-consumer_key= 'DVvXmihjvAQ9Xz19Lc1ISVGa9'
-consumer_secret= 'wMJwH7wVnppkmjXTYluq9gHkZEUIJbVPXV8T9XZ1pSP2JxIfEL'
-access_token= '385212914-CZIj5V35XuyMOxebsIMHWqf9DbgCY1N8hSJG8ca4'
-access_token_secret= 'nGPoaajrqurisX6aNeIoN5h1DzGPndsqnD1qAaODrLnN'
+consumer_key= 'FjkPX4EdbaKQL8CQnX1maCHX0'
+consumer_secret= '8XmViZ9ZRtp96UaueWktTwXUy2yIZ8lmG9IYFs0P264nKVWzAV'
+access_token= '385212914-XGthY2ZCCTmPmqlmRkmvATMi7fQUQ6LUzuWO5uNV'
+access_token_secret= 'doSh08Z4Vph6ZtKwhY4xfxLT0JWc40zoKIwU902DTQVLT'
 
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -52,7 +52,8 @@ tweets = tw.Cursor(api.search,
 
 # Remove URLs
 tweets_no_urls = [remove_url(tweet.text) for tweet in tweets]
-
+for tweet in tweets_no_urls:
+    print(tweet+"\n")
 # Create textblob objects of the tweets
 sentiment_objects = [TextBlob(tweet) for tweet in tweets_no_urls]
 
